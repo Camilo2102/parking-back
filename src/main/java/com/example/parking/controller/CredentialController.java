@@ -136,7 +136,6 @@ public class CredentialController extends GeneralController<Credential> {
 
         String code = IdGeneratorUtil.generateUUID(6);
         registerUserDTO.getUser().setId(IdGeneratorUtil.generateUUID());
-        registerUserDTO.getUser().setId(IdGeneratorUtil.generateUUID());
 
         registerUserDTO.getCredential().setId(IdGeneratorUtil.generateUUID());
 
@@ -156,30 +155,6 @@ public class CredentialController extends GeneralController<Credential> {
         response.put("temporalToken", temporalToken);
         return response;
     }
-
-    @PostMapping("/registerUser")
-    public Map<String, String> registerUser(@RequestBody ParkingUser user) throws Exception {
-        Map<String, String> response = new HashMap<>();
-
-        user.setId(IdGeneratorUtil.generateUUID());
-        user.getCredential().setId(IdGeneratorUtil.generateUUID());
-
-        String code = IdGeneratorUtil.generateUUID(6);
-        user.getCredential().setCode(code);
-
-        Credential encryptedCredential = credentialWithEncryptedCode(user.getCredential());
-        Credential createdCredential = credentialService.save(encryptedCredential);
-
-        user.setCredential(createdCredential);
-
-        EmailUtil.sendPasswordChangeMail(user, createdCredential.getMail(), code);
-
-        userService.save(user);
-
-        response.put("message", MessageConstants.SUCCESS_MESSAGE);
-        return response;
-    }
-
 
 
     @GetMapping("/recoverPassword")
