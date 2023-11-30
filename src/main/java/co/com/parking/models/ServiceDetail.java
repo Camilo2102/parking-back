@@ -26,6 +26,15 @@ public class ServiceDetail extends GeneralModel{
     @JoinColumn(name="car_id")
     private Car car;
 
+    @ManyToOne
+    @JoinColumn(name="card_id")
+    private Card card;
+
+    @ManyToOne
+    @JoinColumn(name="service_id")
+    private Service service;
+
+
     public ServiceDetail(LocalDateTime entry_hour, LocalDateTime exit_hour) {
         this.entry_hour = entry_hour;
         this.exit_hour = exit_hour;
