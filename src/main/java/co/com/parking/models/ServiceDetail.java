@@ -22,6 +22,9 @@ public class ServiceDetail extends GeneralModel{
     @Column(nullable = false, length =64)
     private LocalDateTime exit_hour;
 
+    @Column(nullable = false, length =64)
+    private String description;
+
     @ManyToOne
     @JoinColumn(name="car_id")
     private Car car;
@@ -33,6 +36,7 @@ public class ServiceDetail extends GeneralModel{
     @ManyToOne
     @JoinColumn(name="service_id")
     private Service service;
+
 
 
     public ServiceDetail(LocalDateTime entry_hour, LocalDateTime exit_hour) {

@@ -17,4 +17,10 @@ public class Service extends GeneralModel {
 
     @Column(nullable = false)
     private double value;
+
+    public Service(String serviceType, double value) {
+        this.serviceType = serviceType;
+        this.value = value;
+    }
 }
+
