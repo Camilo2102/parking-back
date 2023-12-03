@@ -1,7 +1,7 @@
 package co.com.parking.config;
 
-import co.com.parking.interceptors.LoggerInterceptor;
-import co.com.parking.interceptors.TokenHandler;
+import co.com.parking.constants.interceptors.LoggerInterceptor;
+import co.com.parking.constants.interceptors.TokenHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

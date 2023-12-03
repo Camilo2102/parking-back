@@ -1,4 +1,4 @@
-package co.com.parking.interceptors;
+package co.com.parking.constants.interceptors;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

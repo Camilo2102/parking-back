@@ -1,4 +1,4 @@
-package co.com.parking.interceptors;
+package co.com.parking.constants.interceptors;
 
 import co.com.parking.utils.HttpUtils;
 import co.com.parking.utils.LoggerUtil;
