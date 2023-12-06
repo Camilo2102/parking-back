@@ -17,7 +17,7 @@ public class BeanLocator {
 
     public Class<?> getClassByName(String name) throws ClassNotFoundException {
         String capitalizaName = name.substring(0, 1).toUpperCase() + name.substring(1);
-        return Class.forName("com.example.parking.models." + capitalizaName);
+        return Class.forName("co.com.parking.models." + capitalizaName);
     }
 
 }
