@@ -8,12 +8,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ClientRepository extends GeneralRepository<Client>{
+public interface ClientRepository extends GeneralRepository<Client> {
     @Override
     @Query("SELECT cl FROM Client cl")
     List<Client> findByFilter(Client client, Pageable page);
 
     @Override
+    @Query("SELECT count(c) FROM Client c")
     long countByFilter(Client client);
 
     @Override
